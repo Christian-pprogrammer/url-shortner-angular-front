@@ -17,25 +17,27 @@ Call the register api `http//localhost:8080/api/user/register`, with the payload
     "password": "Chris@Irembo"
 }
 ```
-. You can then login with the credentials you used for register.
+You can then login with the credentials you used for register.
 
 To run the tests, you can kill this terminal and run the command `mvn test` still with in the project directory.
 
 If anything fails, please try the local database, you can open the file resouces/application.properties
 and replace the code below with your own database configuration (Postgres).
 
+```
 spring.datasource.username=fljigdrv
 spring.datasource.password=EYIxY-I3zkDVL1vx4kla4jlECfFsKBbq
 spring.datasource.url=jdbc:postgresql://bubble.db.elephantsql.com:5432/fljigdrv?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
+```
 
 change to
-
+```
 spring.datasource.username=postgres
 spring.datasource.password=psql
 spring.datasource.url=jdbc:postgresql://localhost:5432/db_name?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
+```
 
-
-It might fail because the online PostgreSQL I used (Just the free tial version) does not allow more than
+It might fail because the online PostgreSQL I used (Just the free trial version) does not allow more than
 one connection from same user!
 
  # Frontend
