@@ -1,27 +1,46 @@
 # IremboProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
-
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Backend
 
-## Code scaffolding
+To run the backend server, Open the project directory in terminal
+and run the command `mvn spring-boot:run`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Because the frontend does not have register functionality, you can use postman to register a user for using while logging in to test.
 
-## Build
+Call the register api `http//localhost:8080/api/user/register`, with the payload like this
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+````json
+{
+    "username": "chris",
+    "password": "Chris@Irembo"
+}
+```
+. You can then login with the credentials you used for register.
 
-## Running unit tests
+To run the tests, you can kill this terminal and run the command `mvn test` still with in the project directory.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+If anything fails, please try the local database, you can open the file resouces/application.properties
+and replace the code below with your own database configuration (Postgres).
 
-## Running end-to-end tests
+spring.datasource.username=fljigdrv
+spring.datasource.password=EYIxY-I3zkDVL1vx4kla4jlECfFsKBbq
+spring.datasource.url=jdbc:postgresql://bubble.db.elephantsql.com:5432/fljigdrv?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+change to
 
-## Further help
+spring.datasource.username=postgres
+spring.datasource.password=psql
+spring.datasource.url=jdbc:postgresql://localhost:5432/db_name?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+It might fail because the online PostgreSQL I used (Just the free tial version) does not allow more than
+one connection from same user!
+
+ # Frontend
+
+Run `ng serve` for a dev server. Navigate to http://localhost:4200/.
+
+Also make sure you change the backend_url in src/environment.ts to ` http://localhost:8080 ` (no `/` at the end) If you are running the project with local backend
+````

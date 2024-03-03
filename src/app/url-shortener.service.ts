@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UrlShortenerService {
 
-  private baseUrl = 'https://irembo-test-project.ue.r.appspot.com';
+  private baseUrl = environment.backend_url;
 
   constructor(private http: HttpClient) { }
 

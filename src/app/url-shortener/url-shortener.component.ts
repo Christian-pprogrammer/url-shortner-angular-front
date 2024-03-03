@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UrlShortenerService } from '../url-shortener.service';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { environment } from 'src/environment';
 
 @Component({
   selector: 'app-url-shortener',
@@ -21,7 +22,7 @@ export class UrlShortenerComponent implements OnInit {
   }
   originalUrl: string = '';
   shortenedUrl: string = '';
-  backendUrl: string = 'https://irembo-test-project.ue.r.appspot.com/api/url';
+  backendUrl: string = `${environment.backend_url}/api/url`;
   btnText: string = 'copy';
   urlError: string = '';
   customUrl: string = '';
