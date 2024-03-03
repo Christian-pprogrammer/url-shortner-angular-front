@@ -11,7 +11,7 @@ Because the frontend does not have register functionality, you can use postman t
 
 Call the register api `http//localhost:8080/api/user/register`, with the payload like this
 
-````json
+```json
 {
     "username": "chris",
     "password": "Chris@Irembo"
