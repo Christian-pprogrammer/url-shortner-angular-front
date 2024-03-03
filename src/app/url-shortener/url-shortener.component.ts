@@ -21,7 +21,7 @@ export class UrlShortenerComponent implements OnInit {
   }
   originalUrl: string = '';
   shortenedUrl: string = '';
-  backendUrl: string = 'http://localhost:8080/api/url';
+  backendUrl: string = 'https://irembo-test-project.ue.r.appspot.com/api/url';
   btnText: string = 'copy';
   urlError: string = '';
   customUrl: string = '';

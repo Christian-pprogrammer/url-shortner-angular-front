@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UrlShortenerService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://irembo-test-project.ue.r.appspot.com';
 
   constructor(private http: HttpClient) { }
 
