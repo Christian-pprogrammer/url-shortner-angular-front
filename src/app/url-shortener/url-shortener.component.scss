@@ -1,0 +1,22 @@
+.container {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    width: 400px;
+    form {
+      button.custom-url-button {
+        border: none;
+        outline: none;
+        // color: ;
+        display: block;
+        background-color: transparent;
+        margin: 5px 0px;
+      }
+    }
+  }
+
+}
+

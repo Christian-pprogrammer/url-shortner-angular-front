@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <form>
+        <h2 class="mb-4">URL Shortener</h2>
+        <div class="alert alert-danger" *ngIf="urlError">
+          {{urlError}}
+        </div>
+        <div class="alert alert-success" *ngIf="successMessage">
+          {{successMessage}}
+        </div>
+        <div class="form-group">
+          <label for="url">Enter URL to Shorten:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="url"
+            [(ngModel)]="originalUrl"
+            name="url"
+            required
+          />
+        </div>
+        <button type="button" class="custom-url-button text-primary" (click)="displayCustomUrl()">Custom Url?</button>
+        <div class="form-group" *ngIf="showCustomUrl">
+          <label for="url">Enter custom Url:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="custom-url"
+            [(ngModel)]="customUrl"
+            name="url"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary mt-2"
+          (click)="shortenUrl()"
+        >
+          Shorten URL
+        </button>
+      </form>
+      <div class="mt-4" *ngIf="shortenedUrl">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Short url:</span>
+          </div>
+          <input type="text" class="form-control" [value]="shortenedUrl" readonly>
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="copyUrl()">{{btnText}}</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <button type="button" class="btn btn-danger" (click)="logout()">
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
